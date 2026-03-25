@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PUC Imóveis</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+
+  /* CABEÇALHO */
+  .cabecalho {
+    background-color: #1a1a2e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+  }
+
+  .cabecalho h2 {
+    font-size: 1.4rem;
+    color: #e0c96e;
+    letter-spacing: 1px;
+  }
+
+  .cabecalho input {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    width: 260px;
+    font-size: 0.9rem;
+    outline: none;
+  }
+
+  /* LAYOUT PRINCIPAL */
+  .layout {
+    display: flex;
+    min-height: calc(100vh - 56px);
+  }
+
+  /* MENU LATERAL */
+  .menu {
+    width: 180px;
+    background-color: #16213e;
+    padding: 24px 0;
+    flex-shrink: 0;
+  }
+
+  .menu ul {
+    list-style: none;
+  }
+
+  .menu ul li {
+    padding: 14px 24px;
+    color: #ccc;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .menu ul li:hover,
+  .menu ul li:first-child {
+    background-color: #0f3460;
+    color: #e0c96e;
+    border-left: 3px solid #e0c96e;
+  }
+
+  /* CONTEÚDO PRINCIPAL */
+  .conteudo {
+    flex: 1;
+    padding: 20px 24px;
+    overflow-y: auto;
+  }
+
+  /* SLIDER */
+  .slider {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    background: #ddd;
+  }
+
+  .slides {
+    display: flex;
+    height: 100%;
+  }
+
+  .slide {
+    min-width: 100%;
+    height: 100%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* TÍTULO */
+  .conteudo h3 {
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #e0c96e;
+    padding-bottom: 6px;
+    display: inline-block;
+  }
+
+  /* CARDS */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+
+  .card img {
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .card .info {
+    padding: 16px 20px;
+    flex: 1;
+  }
+
+  .card .info p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .card .info .preco {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #0f3460;
+  }
+</style>
+</head>
+<body>
+
+<div class="cabecalho">
+  <h2>PUC Imóveis</h2>
+  <input type="text" placeholder="Buscar imóveis...">
+</div>
+
+<div class="layout">
+
+  <div class="menu">
+    <ul>
+      <li>Home</li>
+      <li>Alugar</li>
+      <li>Comprar</li>
+      <li>Favoritos</li>
+      <li>Contato</li>
+    </ul>
+  </div>
+
+  <div class="conteudo">
+
+    <!-- SLIDER -->
+    <div class="slider">
+      <div class="slides">
+        <div class="slide"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"></div>
+        <div class="slide"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688"></div>
+        <div class="slide"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994"></div>
+      </div>
+    </div>
+
+    <h3>Imóveis Disponíveis</h3>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+        <div class="info">
+          <p>Apartamento moderno</p>
+          <p class="preco">R$ 1.800/mês</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858">
+        <div class="info">
+          <p>Casa minimalista</p>
+          <p class="preco">R$ 2.500/mês</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+        <div class="info">
+          <p>Kitnet compacta</p>
+          <p class="preco">R$ 1.000/mês</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5">
+        <div class="info">
+          <p>Apartamento luxo</p>
+          <p class="preco">R$ 3.200/mês</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+        <div class="info">
+          <p>Casa com piscina</p>
+          <p class="preco">R$ 4.000/mês</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
